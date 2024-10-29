@@ -50,3 +50,22 @@ getCategories();
 addHeaderMoviesLinks();
 fetchTrending(trendingMoviesContainer, trendingMovies);
 fetchTrending(trendingTVContainer, trendingTVShow);
+// Scroll to Top Button
+const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+// Show the button after scrolling down 100vh
+window.onscroll = function() {
+    if (document.body.scrollTop > window.innerHeight || document.documentElement.scrollTop > window.innerHeight) {
+        scrollToTopBtn.style.display = "block";
+    } else {
+        scrollToTopBtn.style.display = "none";
+    }
+};
+
+// Smooth scroll to top function
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
