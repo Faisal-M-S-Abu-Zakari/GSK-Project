@@ -1,9 +1,6 @@
 const darkThemeIcon = document.getElementById("dark-icon");
 const lightThemeIcon = document.getElementById("light-icon");
 
-// Constants
-const THEME_KEY = "Theme";
-
 // Change theme function
 const changeTheme = () => {
   const currentTheme = checkThemeStorage();

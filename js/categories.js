@@ -1,6 +1,3 @@
-const LINK_KEY = "LINK";
-const TITLE_KEY = "TITLE";
-
 const updateLocalStorageLink = (title, link) => {
   localStorage.setItem(TITLE_KEY, title);
   localStorage.setItem(LINK_KEY, link);
