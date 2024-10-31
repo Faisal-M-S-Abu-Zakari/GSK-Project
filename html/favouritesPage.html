@@ -9,6 +9,13 @@
     <link rel="shortcut icon" href="../images/logo.ico" type="image/x-icon">
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"> -->
     <link rel="stylesheet" href="../css/favouritesPageStyles.css">
+    <link rel="stylesheet" href="../css/popup.css">
+    <link rel="stylesheet" href="../css/loading.css">
+    <link rel="stylesheet" href="../css/search.css">
+    <link rel="stylesheet" href="../css/searchResultsPageStyles.css">
+
+
+
 
     <!-- Font Links -->
     <!-- Agbalumo Font -->
@@ -40,7 +47,7 @@
             <nav>
                 <ul>
                     <li><a class="nav-links" href="./homePage.html">Home</a></li>
-                    <li><a class="nav-links" href="#trending-section">About</a></li>
+                    <li><a class="nav-links" href="./homePage.html#about-section">About</a></li>
                     <li class="movie-list">
                         <a class="nav-links " href="./movies.html">Movies</a>
                         <ul class="movie-Categories">
@@ -52,18 +59,20 @@
                             <li><a class="movie-Categories-link" href="#">See All Movies</a></li> -->
                         </ul>
                     </li>
-                    <li><a class="nav-links" href="./favourites.html">My List</a></li>
+                    <li><a class="nav-links" href="./favouritesPage.html">My List</a></li>
                 </ul>
             </nav>
         </div>
         <div class="right-header">
             <div class="search-bar-div">
                 <i class="bi bi-search"></i>
-                <input type="text" placeholder="Search here ..." id="search-bar">
+                <input type="text" placeholder="Search here ..." id="search-bar" oninput="searchApi(event)"
+                    onchange="clearList()" autocomplete="off">
+                <ul class="search-res-list" id="search-res-list"></ul>
             </div>
             <div class="theme-icon" onclick="changeTheme()">
                 <i id="light-icon" class=" bi bi-brightness-high"></i>
-                <i id="dark-icon" class="bi bi-moon-stars"></i>   
+                <i id="dark-icon" class="bi bi-moon-stars"></i>
             </div>
         </div>
     </header>
@@ -73,54 +82,47 @@
                 Your Favourites
             </h1>
             <div class="container">
-                <div class="movie-poster">
+                <!-- <div class="movie-poster">
                     <img src="../images/TestingImages/film14.jpeg">
                     <h3>Title</h3>
-                </div>
-                <div class="movie-poster">
-                    <img src="../images/TestingImages/film8.jpg">
-                    <h3>Title</h3>
-                </div>
-                <div class="movie-poster">
-                    <img src="../images/TestingImages/film10.jpeg">
-                    <h3>Title</h3>
-                </div>
-                <div class="movie-poster">
-                    <img src="../images/TestingImages/film16.jpeg">
-                    <h3>Title</h3>
-                </div>
-                <div class="movie-poster">
-                    <img src="../images/TestingImages/film11.jpeg">
-                    <h3>Title</h3>
-                </div>
-                <div class="movie-poster">
-                    <img src="../images/TestingImages/film9.jpeg">
-                    <h3>Title</h3>
-                </div>
-                <div class="movie-poster">
-                    <img src="../images/TestingImages/film17.jpeg">
-                    <h3>Title</h3>
-                </div>
-                <div class="movie-poster">
-                    <img src="../images/TestingImages/film16.jpeg">
-                    <h3>Title</h3>
-                </div>
-                <div class="movie-poster">
-                    <img src="../images/TestingImages/film11.jpeg">
-                    <h3>Title</h3>
-                </div>
-                <div class="movie-poster">
-                    <img src="../images/TestingImages/film9.jpeg">
-                    <h3>Title</h3>
-                </div>
-                <div class="movie-poster">
-                    <img src="../images/TestingImages/film17.jpeg">
-                    <h3>Title</h3>
-                </div>
+                </div> -->
             </div>
         </section>
     </main>
+    <div class="popup" id="moviePopup">
+        <div class="popup-content">
+            <span class="close-popup" id="closePopup">&times;</span>
+            <img src="../images/TestingImages/film11.jpeg" alt="">
+            <div class="left-side">
+                <div class="tittle">
+                    <h2 class="spider">
+                        Title
+                    </h2>
+                    <div class="rating">
+                        <span>IMDb</span>
+                        <span class="score">7/10</span>
+                    </div>
+                </div>
+                <p class="desc">
+                    Discription
+                </p>
+                <button class="glow-button">
+                    <i class="bi bi-heart"></i>
+                    <span>ADD TO YOUR LIST</span>
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../js/ApiLinks.js"></script>
+    <script src="../js/loadingPage.js"></script>
     <script src="../js/darkMode.js"></script>
-    <script src="../js/loadingPage.js"></script>    
+    <script src="../js/categories.js"></script>
+    <script src="../js/addCategToHeader.js"></script>
+    <script src="../js/search.js"></script>
+    <script src="../js/popup.js"></script>
+    <script src="../js/favMovie.js"></script>
 </body>
+
 </html>

@@ -377,6 +377,6 @@ header .right-header .theme-icon {
 
 
 /* Hide main content initially */
-header, main {
+/* header, main {
   display: none; 
-}
+} */
